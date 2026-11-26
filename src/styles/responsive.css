@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Responsive Design: Desktop, Laptop, Tablet & Mobile
+   ========================================================================== */
+
+/* Large Desktop (>= 1280px) */
+@media (min-width: 1280px) {
+  .rf-wizard-wrapper {
+    max-width: 600px;
+  }
+}
+
+/* Tablet & Small Laptop (<= 768px) */
+@media (max-width: 768px) {
+  .rf-page-shell {
+    padding: 1.75rem 1rem;
+  }
+
+  .rf-card-header {
+    padding: 1.65rem 1.65rem 1.25rem;
+  }
+
+  .rf-card-body {
+    padding: 1.5rem 1.65rem 1.75rem;
+  }
+}
+
+/* Mobile Devices (<= 560px) */
+@media (max-width: 560px) {
+  .rf-page-shell {
+    padding: 1rem 0.75rem;
+    align-items: flex-start;
+  }
+
+  .rf-card {
+    border-radius: 20px;
+  }
+
+  .rf-card-header {
+    padding: 1.35rem 1.2rem 1.1rem;
+  }
+
+  .rf-brand-name {
+    font-size: 1.22rem;
+  }
+
+  .rf-brand-tagline {
+    font-size: 0.88rem;
+  }
+
+  .rf-card-body {
+    padding: 1.25rem 1.2rem 1.45rem;
+  }
+
+  .rf-progress-container {
+    padding: 0.85rem 0.9rem 0.95rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .rf-step-label-full {
+    display: none;
+  }
+
+  .rf-step-label-short {
+    display: inline;
+  }
+
+  .rf-step-trigger {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.32rem;
+    padding: 0.35rem 0.25rem;
+    text-align: center;
+  }
+
+  .rf-step-text {
+    font-size: 0.72rem;
+  }
+
+  .rf-section-title {
+    font-size: 1.12rem;
+  }
+
+  .rf-section-subtitle {
+    font-size: 0.83rem;
+  }
+
+  .rf-fields-grid--two-col {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .rf-criteria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Prevent iOS Safari zoom on input focus by keeping >= 16px */
+  .rf-input {
+    font-size: 1rem;
+  }
+
+  .rf-review-card {
+    padding: 0.95rem 1rem;
+  }
+
+  .rf-review-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .rf-review-detail {
+    text-align: left;
+  }
+
+  .rf-review-submeta {
+    margin-left: 0.35rem;
+  }
+
+  .rf-review-password-cell {
+    justify-content: flex-start;
+  }
+
+  .rf-actions-bar--end .rf-btn {
+    width: 100%;
+  }
+
+  .rf-card-footer {
+    padding: 0.8rem 1rem;
+    font-size: 0.72rem;
+    text-align: center;
+  }
+}
+
+/* Compact Mobile Screens (<= 390px) */
+@media (max-width: 390px) {
+  .rf-brand-pill {
+    display: none;
+  }
+
+  .rf-progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .rf-actions-bar--split {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .rf-actions-bar--split .rf-btn {
+    width: 100%;
+  }
+
+  .rf-btn--wide {
+    width: 100%;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,1083 @@
+/* ==========================================================================
+   Page Layout & Ambient Accents
+   ========================================================================== */
+
+.rf-page-shell {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+  overflow-x: hidden;
+}
+
+.rf-ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(72px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rf-ambient-orb--blue {
+  width: 380px;
+  height: 380px;
+  top: -110px;
+  left: -90px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, transparent 70%);
+}
+
+.rf-ambient-orb--violet {
+  width: 420px;
+  height: 420px;
+  bottom: -140px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.14) 0%, transparent 70%);
+}
+
+.rf-wizard-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 580px;
+}
+
+/* ==========================================================================
+   Centered SaaS Registration Card & Header
+   ========================================================================== */
+
+.rf-card {
+  background: var(--rf-surface);
+  border: 1px solid var(--rf-border-subtle);
+  border-radius: var(--rf-radius-xl);
+  box-shadow: var(--rf-shadow-card);
+  overflow: hidden;
+}
+
+.rf-card-header {
+  padding: 2rem 2.25rem 1.4rem;
+  background: var(--rf-gradient-header);
+  border-bottom: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.rf-brand-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.65rem;
+}
+
+.rf-brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: var(--rf-gradient-brand);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px -3px rgba(124, 58, 237, 0.35);
+}
+
+.rf-brand-name {
+  font-family: var(--rf-font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #0f172a 15%, #3730a3 60%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rf-brand-pill {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--rf-violet-700);
+  background: var(--rf-violet-50);
+  border: 1px solid var(--rf-violet-100);
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--rf-radius-pill);
+}
+
+.rf-brand-tagline {
+  font-family: var(--rf-font-display);
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--rf-text-secondary);
+  letter-spacing: -0.01em;
+}
+
+.rf-card-body {
+  padding: 1.75rem 2.25rem 2rem;
+}
+
+.rf-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.9rem 1.5rem;
+  background: #fafcff;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.76rem;
+  color: var(--rf-text-muted);
+}
+
+.rf-card-footer svg {
+  color: var(--rf-violet-600);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Dynamic Progress Bar & Step Indicators
+   ========================================================================== */
+
+.rf-progress-container {
+  margin-bottom: 1.75rem;
+  padding: 1rem 1.15rem 1.05rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #fcfdff 100%);
+  border: 1px solid #eef2f6;
+  border-radius: var(--rf-radius-lg);
+}
+
+.rf-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
+.rf-step-counter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.rf-step-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--rf-radius-pill);
+  background: var(--rf-blue-50);
+  border: 1px solid var(--rf-blue-100);
+  color: var(--rf-blue-600);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.rf-step-current-name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--rf-text-primary);
+}
+
+.rf-progress-percent {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--rf-violet-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.rf-progress-track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: var(--rf-radius-pill);
+  overflow: hidden;
+  margin-bottom: 0.95rem;
+}
+
+.rf-progress-fill {
+  height: 100%;
+  border-radius: var(--rf-radius-pill);
+  background: var(--rf-gradient-progress);
+  transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rf-steps-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.rf-step-item {
+  min-width: 0;
+}
+
+.rf-step-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.45rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--rf-radius-sm);
+  text-align: left;
+  cursor: default;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.rf-step-trigger--clickable {
+  cursor: pointer;
+}
+
+.rf-step-trigger--clickable:hover {
+  background: #ffffff;
+  border-color: var(--rf-border-subtle);
+}
+
+.rf-step-trigger--clickable:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--rf-ring-brand);
+}
+
+.rf-step-node {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 240ms ease;
+}
+
+.rf-step-text {
+  font-size: 0.76rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rf-step-label-short {
+  display: none;
+}
+
+/* Step Node States */
+.rf-step-item--upcoming .rf-step-node {
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  color: #64748b;
+}
+
+.rf-step-item--upcoming .rf-step-text {
+  color: var(--rf-text-muted);
+}
+
+.rf-step-item--active .rf-step-node {
+  background: #ffffff;
+  border: 2px solid var(--rf-violet-600);
+  color: var(--rf-violet-600);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.14);
+}
+
+.rf-step-item--active .rf-step-text {
+  color: var(--rf-text-primary);
+  font-weight: 700;
+}
+
+.rf-step-item--completed .rf-step-node {
+  background: var(--rf-gradient-brand);
+  border: 1.5px solid transparent;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25);
+}
+
+.rf-step-item--completed .rf-step-text {
+  color: var(--rf-blue-600);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Step Transitions & Section Headings
+   ========================================================================== */
+
+.rf-step-stage--forward {
+  animation: rfSlideInForward 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rf-step-stage--backward {
+  animation: rfSlideInBackward 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rf-section-intro {
+  margin-bottom: 1.4rem;
+}
+
+.rf-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--rf-violet-600);
+  margin-bottom: 0.35rem;
+}
+
+.rf-section-title {
+  font-family: var(--rf-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--rf-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.rf-section-subtitle {
+  font-size: 0.875rem;
+  color: var(--rf-text-secondary);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Form Inputs & Validation Feedback
+   ========================================================================== */
+
+.rf-fields-grid {
+  display: grid;
+  gap: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.rf-fields-grid--two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rf-fields-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.rf-field-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.rf-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.42rem;
+}
+
+.rf-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--rf-text-primary);
+}
+
+.rf-required-mark {
+  color: var(--rf-rose-500);
+  margin-left: 0.2rem;
+}
+
+.rf-valid-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.24rem;
+  font-size: 0.71rem;
+  font-weight: 600;
+  color: var(--rf-emerald-700);
+  background: var(--rf-emerald-50);
+  border: 1px solid var(--rf-emerald-100);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--rf-radius-pill);
+}
+
+.rf-input-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid var(--rf-border-subtle);
+  border-radius: var(--rf-radius-md);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.rf-input-shell:hover {
+  border-color: var(--rf-border-strong);
+}
+
+.rf-input-shell:focus-within {
+  border-color: var(--rf-violet-600);
+  box-shadow: 0 0 0 4px var(--rf-ring-brand);
+}
+
+.rf-input-shell--error {
+  border-color: var(--rf-rose-500);
+  background: #fffdfd;
+}
+
+.rf-input-shell--error:hover,
+.rf-input-shell--error:focus-within {
+  border-color: var(--rf-rose-600);
+  box-shadow: 0 0 0 4px var(--rf-ring-error);
+}
+
+.rf-input-shell--valid {
+  border-color: #6ee7b7;
+}
+
+.rf-input-shell--valid:focus-within {
+  border-color: var(--rf-emerald-600);
+  box-shadow: 0 0 0 4px var(--rf-ring-valid);
+}
+
+.rf-input-icon {
+  position: absolute;
+  left: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rf-text-placeholder);
+  pointer-events: none;
+  transition: color 180ms ease;
+}
+
+.rf-input-shell:focus-within .rf-input-icon {
+  color: var(--rf-violet-600);
+}
+
+.rf-input-shell--error .rf-input-icon,
+.rf-input-shell--error:focus-within .rf-input-icon {
+  color: var(--rf-rose-500);
+}
+
+.rf-input-shell--valid .rf-input-icon {
+  color: var(--rf-emerald-600);
+}
+
+.rf-input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.7rem 0.95rem;
+  border: none;
+  border-radius: var(--rf-radius-md);
+  background: transparent;
+  color: var(--rf-text-primary);
+  font-size: 0.925rem;
+  line-height: 1.4;
+  outline: none;
+}
+
+.rf-input::placeholder {
+  color: var(--rf-text-placeholder);
+}
+
+.rf-input--with-icon {
+  padding-left: 2.65rem;
+}
+
+.rf-input--with-action {
+  padding-right: 2.85rem;
+}
+
+.rf-input-action {
+  position: absolute;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rf-visibility-toggle {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--rf-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.rf-visibility-toggle:hover {
+  background: #f1f5f9;
+  color: var(--rf-text-primary);
+}
+
+.rf-visibility-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--rf-ring-brand);
+  color: var(--rf-violet-600);
+}
+
+.rf-error-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.38rem;
+  margin-top: 0.42rem;
+  font-size: 0.79rem;
+  font-weight: 500;
+  color: var(--rf-rose-600);
+  line-height: 1.4;
+  animation: rfErrorReveal 180ms ease;
+}
+
+.rf-error-icon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.rf-helper-text {
+  margin-top: 0.38rem;
+  font-size: 0.77rem;
+  color: var(--rf-text-muted);
+}
+
+/* ==========================================================================
+   Password Strength & Complexity Checklist (Step 2)
+   ========================================================================== */
+
+.rf-password-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rf-strength-card {
+  padding: 0.85rem 1rem;
+  background: var(--rf-surface-muted);
+  border: 1px solid #eef2f6;
+  border-radius: var(--rf-radius-md);
+}
+
+.rf-strength-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.rf-strength-title {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--rf-text-secondary);
+}
+
+.rf-strength-status {
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.rf-strength-status--idle {
+  color: var(--rf-text-placeholder);
+  font-weight: 500;
+}
+
+.rf-strength-status--weak {
+  color: var(--rf-rose-600);
+}
+
+.rf-strength-status--fair {
+  color: var(--rf-amber-500);
+}
+
+.rf-strength-status--good {
+  color: var(--rf-blue-600);
+}
+
+.rf-strength-status--strong {
+  color: var(--rf-emerald-600);
+}
+
+.rf-strength-bars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.38rem;
+  margin-bottom: 0.75rem;
+}
+
+.rf-strength-segment {
+  height: 5px;
+  border-radius: var(--rf-radius-pill);
+  background: #e2e8f0;
+  transition: background-color 220ms ease;
+}
+
+.rf-strength-segment--weak {
+  background: var(--rf-rose-500);
+}
+
+.rf-strength-segment--fair {
+  background: var(--rf-amber-500);
+}
+
+.rf-strength-segment--good {
+  background: var(--rf-blue-500);
+}
+
+.rf-strength-segment--strong {
+  background: var(--rf-emerald-600);
+}
+
+.rf-criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.42rem 0.75rem;
+}
+
+.rf-criteria-item {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-size: 0.75rem;
+  color: var(--rf-text-muted);
+  transition: color 180ms ease;
+}
+
+.rf-criteria-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 180ms ease;
+}
+
+.rf-criteria-item--passed {
+  color: var(--rf-emerald-700);
+  font-weight: 500;
+}
+
+.rf-criteria-item--passed .rf-criteria-icon {
+  background: var(--rf-emerald-100);
+  color: var(--rf-emerald-700);
+}
+
+/* ==========================================================================
+   Review & Submit Summary Cards (Step 3)
+   ========================================================================== */
+
+.rf-review-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rf-review-card {
+  background: #fcfdff;
+  border: 1px solid var(--rf-border-subtle);
+  border-radius: var(--rf-radius-lg);
+  padding: 1.1rem 1.2rem;
+}
+
+.rf-review-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.rf-review-card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.rf-review-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rf-review-icon--blue {
+  background: var(--rf-blue-50);
+  color: var(--rf-blue-600);
+  border: 1px solid var(--rf-blue-100);
+}
+
+.rf-review-icon--violet {
+  background: var(--rf-violet-50);
+  color: var(--rf-violet-600);
+  border: 1px solid var(--rf-violet-100);
+}
+
+.rf-review-card-title {
+  font-family: var(--rf-font-display);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--rf-text-primary);
+}
+
+.rf-edit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: var(--rf-radius-pill);
+  border: 1px solid var(--rf-border-subtle);
+  background: #ffffff;
+  color: var(--rf-violet-600);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.rf-edit-link:hover {
+  background: var(--rf-violet-50);
+  border-color: var(--rf-violet-100);
+}
+
+.rf-edit-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--rf-ring-brand);
+}
+
+.rf-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.rf-review-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rf-review-term {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--rf-text-muted);
+  flex-shrink: 0;
+}
+
+.rf-review-detail {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--rf-text-primary);
+  text-align: right;
+  word-break: break-word;
+}
+
+.rf-review-detail--mono {
+  font-variant-numeric: tabular-nums;
+}
+
+.rf-review-submeta {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.77rem;
+  font-weight: 500;
+  color: var(--rf-text-muted);
+}
+
+.rf-review-password-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rf-masked-dots {
+  letter-spacing: 0.14em;
+  font-size: 0.95rem;
+  color: var(--rf-text-primary);
+}
+
+.rf-security-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.14rem 0.5rem;
+  border-radius: var(--rf-radius-pill);
+  background: var(--rf-violet-50);
+  border: 1px solid var(--rf-violet-100);
+  color: var(--rf-violet-700);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.rf-validation-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--rf-radius-md);
+  background: linear-gradient(90deg, #f0fdf4 0%, #f0f9ff 100%);
+  border: 1px solid #bbf7d0;
+  color: #065f46;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.rf-validation-banner-icon {
+  color: var(--rf-emerald-600);
+  flex-shrink: 0;
+  margin-top: 0.08rem;
+}
+
+/* ==========================================================================
+   Action Bars & SaaS Buttons
+   ========================================================================== */
+
+.rf-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.rf-actions-bar--end {
+  justify-content: flex-end;
+}
+
+.rf-actions-bar--split {
+  justify-content: space-between;
+}
+
+.rf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 46px;
+  padding: 0.7rem 1.45rem;
+  border-radius: var(--rf-radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: transform 160ms ease, box-shadow 180ms ease, background 180ms ease,
+    opacity 180ms ease, border-color 180ms ease;
+}
+
+.rf-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--rf-ring-brand);
+}
+
+.rf-btn--primary,
+.rf-btn--submit {
+  background: var(--rf-gradient-brand);
+  color: #ffffff;
+  box-shadow: var(--rf-shadow-btn);
+}
+
+.rf-btn--primary:hover:not(:disabled),
+.rf-btn--submit:hover:not(:disabled) {
+  background: var(--rf-gradient-brand-hover);
+  box-shadow: var(--rf-shadow-btn-hover);
+  transform: translateY(-1px);
+}
+
+.rf-btn--primary:active:not(:disabled),
+.rf-btn--submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.rf-btn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.rf-btn--secondary {
+  background: #ffffff;
+  border-color: var(--rf-border-subtle);
+  color: var(--rf-text-secondary);
+}
+
+.rf-btn--secondary:hover {
+  background: var(--rf-surface-muted);
+  border-color: var(--rf-border-strong);
+  color: var(--rf-text-primary);
+}
+
+.rf-btn--wide {
+  min-width: 200px;
+}
+
+/* ==========================================================================
+   Animated Success Screen
+   ========================================================================== */
+
+.rf-success-screen {
+  text-align: center;
+  padding: 1rem 0.5rem 0.5rem;
+  animation: rfFadePop 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rf-success-badge-wrap {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rf-success-pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.25) 0%,
+    rgba(124, 58, 237, 0.12) 100%
+  );
+  animation: rfPulseRing 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.rf-success-pulse-ring--delayed {
+  animation-delay: 1.1s;
+}
+
+.rf-success-icon-circle {
+  position: relative;
+  z-index: 1;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #2563eb 55%, #7c3aed 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.35);
+  animation: rfSuccessIconBounce 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rf-success-heading {
+  font-family: var(--rf-font-display);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--rf-text-primary);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.45rem;
+}
+
+.rf-success-message {
+  font-size: 0.96rem;
+  color: var(--rf-text-secondary);
+  margin-bottom: 1.35rem;
+}
+
+.rf-success-confirm-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  text-align: left;
+  padding: 0.95rem 1.1rem;
+  margin-bottom: 1.25rem;
+  border-radius: var(--rf-radius-lg);
+  background: linear-gradient(180deg, #f8fafc 0%, #f5f3ff 100%);
+  border: 1px solid #e2e8f0;
+}
+
+.rf-success-confirm-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--rf-text-primary);
+}
+
+.rf-success-confirm-row--muted {
+  font-weight: 500;
+  color: var(--rf-text-secondary);
+}
+
+.rf-confirm-icon {
+  color: var(--rf-emerald-600);
+  flex-shrink: 0;
+}
+
+.rf-confirm-icon--violet {
+  color: var(--rf-violet-600);
+  flex-shrink: 0;
+}
+
+.rf-success-account-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem 0.6rem 0.65rem;
+  margin-bottom: 1.6rem;
+  border-radius: var(--rf-radius-pill);
+  background: #ffffff;
+  border: 1px solid var(--rf-border-subtle);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  max-width: 100%;
+}
+
+.rf-avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--rf-gradient-brand);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rf-account-pill-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
+}
+
+.rf-account-pill-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--rf-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rf-account-pill-email {
+  font-size: 0.76rem;
+  color: var(--rf-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rf-success-actions {
+  display: flex;
+  justify-content: center;
+}
